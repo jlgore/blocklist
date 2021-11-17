@@ -1,0 +1,25 @@
+upstream:
+  default:
+    - 1.1.1.1
+    - 9.9.9
+    - tcp-tls:fdns1.dismail.de:853
+    - https://dns.digitale-gesellschaft.ch/dns-query
+blocking:
+  blackLists:
+    ads:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  blockType: nxDomain
+  refreshPeriod: 5m
+  clientGroupsBlock:
+    default:
+      - ads
+port: 53
+httpPort: 4000
+caching:
+  minTime: 1m
+  maxTime: 5m
+  prefetching: true
+queryLog:
+  type: csv
+  target: /logs
+  logRetentionDays: 7

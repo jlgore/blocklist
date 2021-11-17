@@ -1,0 +1,2 @@
+0.0.0.0 roblox.com
+0.0.0.0 scratch.com
